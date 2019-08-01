@@ -10,7 +10,8 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'secret'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bae.db'
 heroku = Heroku(app)
 db.init_app(app)
 
@@ -18,7 +19,7 @@ login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 login_manager.init_app(app)
 
-from .models import User
+from .models import User, Writing
 
 @login_manager.user_loader
 def load_user(user_id):

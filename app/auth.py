@@ -70,7 +70,10 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-
+@auth.route('/submitprompt')
+@login_required
+def submitprompt():
+    return render_template('submitprompt.html')
 
     
 
