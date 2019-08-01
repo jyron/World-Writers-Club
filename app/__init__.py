@@ -8,7 +8,8 @@ db = SQLAlchemy()
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'secret'
+app.config['SECRET_KEY'] = 'L\xfe\xdds6\xd8Z\x9ds5\xbdZ\x8f$y\xc8\xfb\xf0\x8egA\x89\xb3\x10\n\xeb\x9c\xdd\xdc\xe8\x15c'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bae.db'
