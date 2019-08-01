@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Prompt:</h1>
+    <h2>{{ prompt }}</h2>
+    
+    <h3></h3>
+    <div id="instructions">
+        <form method='POST' action='/prompt'>
+            
+            <input class = 'paper' type = 'text' name='title' placeholder='Title' autocomplete="off" required>
+            <input class= 'paper' type="text" name="text" placeholder="Text"  autocomplete="off" required>
+                <br><button class='btn btn-success'>Submit</submit>
+        </form>
+    </div>​
+{% endblock %}

@@ -1,8 +1,11 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
-from .models import User
+from .models import User, Writing
 from . import db
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
+from random import choice as rand
+from .prompts import promptlist
+
 
 
 auth = Blueprint('auth', __name__)
@@ -70,10 +73,30 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-@auth.route('/submitprompt')
+
+
+@auth.route('/prompt', methods=['GET'])
 @login_required
-def submitprompt():
-    return render_template('submitprompt.html')
+def prompt_page():
+    randomprompt = rand(promptlist)
+    return render_template('prompt.html', prompt=randomprompt)
+    
+
+@auth.route('/prompt', methods=['POST'])
+@login_required
+def prompt_post():
+    randomprompt = rand(promptlist)
+    text = request.form.get('text')
+    title = request.form.get('title')    
+    author = current_user.id
+    new_writing = Writing(text=text, title=title, prompt=randomprompt, author=author)
+    db.session.add(new_writing)
+    db.session.commit()
+    flash('Thanks for submitting!')
+    return redirect(url_for('main.profile'))
+    
+
+
 
     
 

@@ -11,7 +11,7 @@
     
   </div>
   <br>
-  <h2 class="subtitle" style="line-height: 1.4">Match with another writer, and you both have 15 minutes to answer a prompt.<br>
+  <h2 class="subtitle" style="line-height: 1.4">Match with another writer, and you both have 15 minutes to answer a writing prompt.<br>
      Then share with each other...<br>
       then never speak again ;)
   </h2>
@@ -36,3 +36,18 @@
   
 {% endblock %}
 
+
+"""
+<div id="container">
+    <div id="center">
+      <h1 id="p12">
+        Join The Two Writer Club 
+      </h1>
+    </div>
+  </div>
+  <h2 class="subtitle">Get matched with another writer, and you both have 15 minutes to answer a writing prompt. Then share with each other, then never speak again ;)
+  </h2>
+  {% if not current_user.is_authenticated %}
+  <h3><a href="{{ url_for('auth.signup') }}" class="btn-block">Sign Up</a> Or <a href="{{ url_for('auth.login') }}">Login</a> to start.</h3>
+  {% endif %}
+  """
