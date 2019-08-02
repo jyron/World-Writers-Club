@@ -2,7 +2,11 @@
 
 
 {% block content %}
+<head>
+        <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+</head>
 <style>
+	
     * {
   outline:none;
 	border:none;
@@ -11,12 +15,18 @@
     
 
 }
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
 
 #paper {
 	color:#FFF;
 	font-size:20px;
 }
 #margin {
+    padding-bottom: 5px;
 	margin-left:12px;
 	margin-bottom:20px;
 	-webkit-user-select: none;
@@ -25,18 +35,21 @@
 	-o-user-select: none;
 	user-select: none; 
 }
+
 #text {
-	width:500px;
+	
 	overflow:hidden;
+	max-width: 100%;
 	background-color:#FFF;
+	height: 45px;
 	color:#222;
 	font-family:American Typewriter;
 	font-weight:normal;
-	font-size:24px;
+	font-size:20px;
 	resize:none;
 	line-height:40px;
 	padding-left:100px;
-	padding-right:100px;
+	padding-right:30px;
 	padding-top:45px;
 	padding-bottom:34px;
 	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
@@ -48,14 +61,17 @@
 	border-top:1px solid #FFF;
 	border-bottom:1px solid #FFF;
 }
+
+
+
 #title {
 	background-color:transparent;
-	border-bottom:3px solid #FFF;
-	color:#FFF;
-	font-size:20px;
+	border-bottom:1px solid rgb(22, 18, 18);
+	color:rgb(26, 24, 24);
+	font-size:18px;
 	font-family:Courier, monospace;
 	height:28px;
-	font-weight:bold;
+    font-weight:bold;
 	width:220px;
 }
 #button {
@@ -78,7 +94,9 @@
 	background-color: #62add6;
 	background-image:url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
 	background-repeat:repeat-x;
+	background-position: 0 -50px; 
 }
+
 #button:active {
 	zoom: 1;
 	filter: alpha(opacity=80);
@@ -90,30 +108,59 @@
 	opacity: 0.8;
 }
 #wrapper {
-	width:700px;
-	height:auto;
-	margin-left:auto;
-	margin-right:auto;
+    height: auto;
 	margin-top:24px;
 	margin-bottom:100px;
+	
 }
-</style>
+h1 {
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	font-size: 5vw;
+}
+h2 {
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	font-size: 4vw;
+}
+.badge {
+	word-wrap: break-word !important;
+	overflow-wrap: break-word !important;
+}
+#breaker {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	font-size:calc(100% - 2.3vw);
+}
 
-<h1><span class="badge badge-light">Prompt:</span></h1>
-    <h2><span class="badge badge-dark">"{{ prompt }}"</span></h2>
-    
+</style>
+<div class="container center">
+
+<h2><span class="badge badge-light">Prompt:</span></h2>
+
+    <h1><span id="breaker" class="badge badge-dark">"{{ prompt }}..."</span></h1>
+    </div>
     <br>
+    <div class="container container-center">
     
     <div id="wrapper">
 
         <form id="paper" method="POST" action="">
+			
     
-            <div id="margin">Title: <input id="title" autocomplete="off" type="text" name="title"></div>
-            <textarea placeholder="Enter your response here..." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>  
-            <br>
+            <div id="margin"><span class="badge badge-light">Title: <input id="title" autocomplete="off" type="text" name="title"></span></div>
+			<div class="container">
+			<textarea placeholder="Enter your response here..." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word;  resize: none; height: 260px; "></textarea>  
+			</div>
+		</div>
+		<br>
             <input id="button" type="submit" value="Submit">
             
         </form>
+		</div>
+		
         <script>
                 $(document).ready(function(){
           $('#title').focus();
@@ -121,5 +168,6 @@
         });
                 </script>
     
-    </div>
+   
+
 {% endblock %}
