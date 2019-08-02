@@ -3,7 +3,7 @@
 from flask import Blueprint, render_template, jsonify, request
 from flask_login import login_required, current_user
 from . import db
-
+from .models import User, Writing
 main = Blueprint('main', __name__)
 
 @main.route('/')
@@ -13,7 +13,8 @@ def index():
 @main.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', current=current_user, title = "Profile")
+    personals = Writing.query.filter_by(author=current_user.id)
+    return render_template('profile.html', current=current_user,personals = personals, title = "Profile")
 
 
     

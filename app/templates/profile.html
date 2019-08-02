@@ -13,6 +13,32 @@
 <h1 class="title">
   Welcome, {{ current.name }}!
 </h1>
-<h2>Here's your writing collection</h2>
+<h1 class="subtitle">Your Collection</h1>
 
+  <div class="card-columns">
+  {% for personal in personals %}
+
+  <div class="card bg-light" style="border-color: rgb(44, 8, 77)">
+    
+    <div class="card-header-title">
+      "{{ personal.title }}"
+      <h6>--by {{ current.name }}</h6>
+    </div>
+    <div class="card-text">
+      {{ personal.text }}
+      </div>
+      <div class="card-footer">
+        <h6 style="font-size: 1vw">
+        "{{ personal.prompt }}"
+        </h6>
+      </div>
+    
+  </div>
+  
+  {% endfor %}
+</div>
+
+<hr>
+
+Keep Writing bby!
 {% endblock %} 

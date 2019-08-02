@@ -26,8 +26,9 @@
 	font-size:20px;
 }
 #margin {
-    padding-bottom: 5px;
-	margin-left:12px;
+	padding-bottom: 5px;
+	padding-left: 0%;
+	margin-left:5px;
 	margin-bottom:20px;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -48,10 +49,11 @@
 	font-size:20px;
 	resize:none;
 	line-height:40px;
-	padding-left:100px;
+	padding-left:60px;
 	padding-right:30px;
 	padding-top:45px;
 	padding-bottom:34px;
+	background-position-x: -50px;
 	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
 	background-repeat:repeat-y, repeat;
 	-webkit-border-radius:12px;
@@ -72,7 +74,8 @@
 	font-family:Courier, monospace;
 	height:28px;
     font-weight:bold;
-	width:220px;
+	width:auto;
+	padding-left: 5px;
 }
 #button {
 	cursor:pointer;
@@ -128,11 +131,16 @@ h2 {
 .badge {
 	word-wrap: break-word !important;
 	overflow-wrap: break-word !important;
+	font-size: 4vw;
 }
 #breaker {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	font-size:calc(100% - 2.3vw);
+}
+#bigger {
+	padding-left: 5px;
+	width=100%;
 }
 
 </style>
@@ -150,9 +158,9 @@ h2 {
         <form id="paper" method="POST" action="">
 			
     
-            <div id="margin"><span class="badge badge-light">Title: <input id="title" autocomplete="off" type="text" name="title"></span></div>
+            <div id="margin"><span id = 'bigger' class="badge badge-light">Title: <input id="title" autocomplete="off" type="text" name="title"></span></div>
 			<div class="container">
-			<textarea placeholder="Enter your response here..." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word;  resize: none; height: 260px; "></textarea>  
+			<textarea placeholder="Enter your response here..." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word;  resize: none; height: 460px; "></textarea>  
 			</div>
 		</div>
 		<br>
