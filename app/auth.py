@@ -5,7 +5,7 @@ from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 from random import choice as rand
 from .prompts import promptlist
-
+randomprompt=rand(promptlist)
 
 
 auth = Blueprint('auth', __name__)
@@ -73,27 +73,30 @@ def logout():
     return redirect(url_for('main.index'))
 
 
+#this is where users submit writings
 
 
-@auth.route('/prompt', methods=['GET'])
-@login_required
-def prompt_page():
-    randomprompt = rand(promptlist)
-    return render_template('prompt.html', prompt=randomprompt)
     
 
-@auth.route('/prompt', methods=['POST'])
+@auth.route('/prompt', methods=['GET','POST'])
 @login_required
 def prompt_post():
-    randomprompt = rand(promptlist)
-    text = request.form.get('text')
-    title = request.form.get('title')    
-    author = current_user.id
-    new_writing = Writing(text=text, title=title, prompt=randomprompt, author=author)
-    db.session.add(new_writing)
-    db.session.commit()
-    flash('Thanks for submitting!')
-    return redirect(url_for('main.profile'))
+    prompt=rand(promptlist)
+    
+
+    if request.method == 'POST':
+      text = request.form.get('text')
+      title = request.form.get('title')   
+      prompt = request.form.get('prompt') 
+      author = current_user.id
+      new_writing = Writing(text=text, title=title, prompt=prompt, author=author)
+      db.session.add(new_writing)
+      db.session.commit()
+      flash('Thanks for submitting!')
+      return redirect(url_for('main.profile'))
+    else:
+        
+        return render_template('prompt.html', prompt=prompt)
     
 
 
