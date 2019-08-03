@@ -8,6 +8,7 @@ from .prompts import promptlist
 randomprompt=rand(promptlist)
 
 
+
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
@@ -85,11 +86,10 @@ def prompt_post():
     
 
     if request.method == 'POST':
-      text = request.form.get('text')
-      title = request.form.get('title')   
+      text = request.form.get('text')  
       prompt = request.form.get('prompt') 
       author = current_user.id
-      new_writing = Writing(text=text, title=title, prompt=prompt, author=author)
+      new_writing = Writing(text=text, prompt=prompt, author=author)
       db.session.add(new_writing)
       db.session.commit()
       flash('Thanks for submitting!')

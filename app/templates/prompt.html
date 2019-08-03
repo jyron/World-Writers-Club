@@ -134,23 +134,22 @@ h2 {
 	font-size: 4vw;
 }
 #breaker {
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	font-size:calc(100% - 2.3vw);
+	font-size:calc(100% - 2.4vw);
 }
 #bigger {
 	padding-left: 5px;
-	width=100%;
+	width:70%;
 }
 
 </style>
 <div class="container center">
 
 <h2><span class="badge badge-light">Prompt:</span></h2>
+<br>
 
-    <h1><span id="breaker" class="badge badge-dark">"{{ prompt }}..."</span></h1>
+    <h2><span style="font-size: 2.8vw" class="is-centered badge badge-dark">"{{ prompt }}..."</span></h2>
     </div>
-    <br>
+    
     <div class="container container-center">
     
     <div id="wrapper">
@@ -158,9 +157,8 @@ h2 {
         <form id="paper" method="POST" action="">
 			
             <input type="hidden" name='prompt' value= "{{ prompt }}">
-            <div id="margin"><span id = 'bigger' class="badge badge-light">Title: <input id="title" autocomplete="off" type="text" name="title"></span></div>
-			<div class="container">
-			<textarea placeholder="Enter your response here..." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word;  resize: none; height: 460px; "></textarea>  
+           	<div class="container">
+			<textarea placeholder="SAY WHATEVER YOU WANT HERE..." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word;  resize: none; height: 460px; " required></textarea>  
 			</div>
 		</div>
 		<br>

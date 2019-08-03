@@ -11,9 +11,8 @@
     
   </div>
   <br>
-  <h2 class="subtitle" style="line-height: 1.4">Match with another writer, and you both have 15 minutes to answer a writing prompt.<br>
-     Then share with each other...<br>
-      then never speak again ;)
+  <h2 class="subtitle" style="line-height: 1.4">Match with another author, and you both have 15 minutes to answer a prompt.<br>
+     First person to answer all <span class="badge btn-success">{{ counter }}</span> of our prompts will get a very shiny, very cool prize 🏅
   </h2>
   
   <h3 class="subtitle"><a href="{{ url_for('auth.signup') }}" class="shadow-lg btn btn-danger btn-lg">Join Now</a></h3>
@@ -27,27 +26,12 @@
     
   </div>
   <br>
-  <h2 class="subtitle" style="line-height: 1.4">Match with another writer, and you both have 15 minutes to answer a writing prompt.<br>
-     If you're ready...<br>
-      Choose a Prompt ;)
+  <h2 class="subtitle" style="line-height: 1.4">
+    First person to answer all {{ counter }} of our prompts will get a very shiny, very cool prize 🏅<br>
+     If you're ready...<a href="{{ url_for('auth.prompt_post') }}"><em>Choose a Prompt 🐄</em></a>
   </h2>
   {% endif %}
 
   
 {% endblock %}
 
-
-"""
-<div id="container">
-    <div id="center">
-      <h1 id="p12">
-        Join The Two Writer Club 
-      </h1>
-    </div>
-  </div>
-  <h2 class="subtitle">Get matched with another writer, and you both have 15 minutes to answer a writing prompt. Then share with each other, then never speak again ;)
-  </h2>
-  {% if not current_user.is_authenticated %}
-  <h3><a href="{{ url_for('auth.signup') }}" class="btn-block">Sign Up</a> Or <a href="{{ url_for('auth.login') }}">Login</a> to start.</h3>
-  {% endif %}
-  """

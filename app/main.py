@@ -4,11 +4,13 @@ from flask import Blueprint, render_template, jsonify, request
 from flask_login import login_required, current_user
 from . import db
 from .models import User, Writing
+from .prompts import promptlist
 main = Blueprint('main', __name__)
+counter = len(promptlist)
 
 @main.route('/')
 def index():
-    return render_template('home.html', title = "Home")
+    return render_template('home.html', title = "Home", counter = counter)
 
 @main.route('/profile')
 @login_required

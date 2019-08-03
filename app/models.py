@@ -15,7 +15,6 @@ class User(UserMixin, db.Model):
 class Writing(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String())
-    title = db.Column(db.String())
     prompt = db.Column(db.String(100))
     author = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
