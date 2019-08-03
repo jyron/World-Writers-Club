@@ -1,17 +1,28 @@
-promptlist = ["If I knew then what I know now...",
-"Write about a time you failed.",
-"Out of the ashes, arose a hero...",
-"Write about the piece of furniture you're sitting on right now.",
-"She tried to forget him, but never could...",
-"Outside the window, you see something you can’t believe...",
+promptlist = [
+"If I Knew Then What I Know Now",
+"Write about a time you failed",
+"Out of the ashes, arose a hero",
+"Always?...Always",
+"You Make Me Wanna",
+"She Tried To Forget Him, But Never Could",
 "Hope versus Reason",
-"I'm not like other girls",
-"He's not like other boys",
+"Passion versus Pain",
+"I'm Not Like Other Girls",
+"I'm Not Like Other Boys",
 "Write about love in a hopeless place",
 "When did you know it was time to change?",
 "Regrets and Reminders",
-"What are you grateul for?",
-"My Biggest Fear is..."]
-
-
-
+"What are you grateful for?",
+"My Biggest Fear is",
+"F***, Marry, Kill",
+"What's life like, under the sea?",
+"The smell of ___ makes me so happy",
+"____ Pros/Cons",
+"DON'T LIE 2 ME!",
+"This. Is. No. Ordinary. Love.",
+"I THINK IM FALLING IN LOVE",
+"Sequins On The Beach",
+"I Like It When You",
+"All of a Sudden, Life was Different",
+"Last Thing You Dreamt About"
+]
